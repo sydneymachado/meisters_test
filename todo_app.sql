@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 22/12/2023 às 00:44
+-- Tempo de geração: 22/12/2023 às 13:01
 -- Versão do servidor: 8.2.0
 -- Versão do PHP: 8.2.13
 
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `task` (
   `title` varchar(45) NOT NULL,
   `description` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `task`
@@ -45,6 +45,28 @@ CREATE TABLE IF NOT EXISTS `task` (
 INSERT INTO `task` (`id`, `creation_date`, `finish_date`, `finished`, `title`, `description`) VALUES
 (1, '2023-12-21 23:37:45', '2023-12-21 23:37:45', 1, 'Primeira tarefa', 'This is the first job that I do in this new job'),
 (2, '2023-12-21 23:34:34', '2023-12-21 23:34:34', 1, 'Segunda tarefa', 'This is the second job... go work man!');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `ig` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `email` char(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password` char(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_as_cs NOT NULL,
+  PRIMARY KEY (`ig`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `users`
+--
+
+INSERT INTO `users` (`ig`, `email`, `password`) VALUES
+(1, 'sydney@sydney.eti.br', 'fb8836f108c46b6f988bb3e245c13578'),
+(2, 'sibele@sydney.eti.br', 'fb8836f108c46b6f988bb3e245c13578');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
